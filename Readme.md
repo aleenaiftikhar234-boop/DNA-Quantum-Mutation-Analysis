@@ -2,7 +2,7 @@
 ### *Investigating Proton Tunneling in G-C Base Pairs*
 
 [![Field: Quantum Biology](https://img.shields.io/badge/Field-Quantum%20Biology-blueviolet)](https://en.wikipedia.org/wiki/Quantum_biology)
-[![Language: python 
+[![Language: python] 
 
 ---
 
