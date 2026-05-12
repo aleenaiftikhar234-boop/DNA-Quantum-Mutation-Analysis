@@ -1,3 +1,25 @@
+# 🧬 Q-Mutate: DNA Quantum Mutation Engine
+Investigating Proton Tunneling in G-C Base Pairs
+
+## 🌟 Overview
+Q-Mutate is a computational physics engine designed to simulate...
+
+## 🔬 Scientific Background
+In a classical model, a proton lacks the energy...
+
+### Key Features:
+* **Schrödinger Solver:** Solves the Time-Independent Schrödinger Equation (TISE).
+* **Quartic Double-Well Potential:** Accurately models the bond geometry.
+
+## 🧮 Mathematical Model
+The engine utilizes a Hamiltonian matrix $\hat{H}$ defined as:
+
+$$\hat{H} = -\frac{\hbar^2}{2m}\nabla^2 + V(x)$$
+
+The potential $V(x)$ is modeled as a Quartic Double-Well:
+
+$$V(x) = a(x^2 - b^2)^2$$
+
 Investigating Proton Tunneling in G-C Base Pairs
 
 
