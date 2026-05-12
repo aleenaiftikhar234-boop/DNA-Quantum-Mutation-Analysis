@@ -62,7 +62,6 @@ The simulation identifies the energy splitting ($\Delta E$) between the ground s
 ## 🎓 About the Author
 **Aleena Baig**
 * 📍 Srinagar, Jammu & Kashmir
-* 🏆 Candidate for Pradhan Mantri Rashtriya Bal Puraskar
 * 🔍 Research Interests: Quantum Biology, Computational Neuroscience, and Theoretical Physics.
 
 ---
