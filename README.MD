@@ -1,7 +1,13 @@
 Investigating Proton Tunneling in G-C Base Pairs
+
+
 ​🧬 Q-Mutate: DNA Quantum Mutation Engine
+
+
 ​🌟 Overview
 ​Q-Mutate is a computational physics engine designed to simulate the quantum behavior of protons within the hydrogen bonds of DNA. This project explores the Löwdin Hypothesis, which suggests that protons can "tunnel" across energy barriers, leading to tautomeric shifts and spontaneous genetic mutations.
+
+
 ​🔬 Scientific Background
 ​In a classical model, a proton lacks the energy to "jump" the potential barrier between DNA bases. However, through Quantum Tunneling, there is a non-zero probability of the proton passing through the barrier.
 ​Key Features:
@@ -10,12 +16,17 @@ Investigating Proton Tunneling in G-C Base Pairs
 ​Thermal Analysis: Compares quantum tunneling rates against classical Boltzmann distributions at human body temperature (310K).
 ​Risk Scoring: Categorizes mutation probability based on calculated tunneling frequencies.
 ​🧮 Mathematical Model
+
+
 ​The engine utilizes a Hamiltonian matrix \hat{H} defined as:
 \hat{H} = -\frac{\hbar^2}{2m}\nabla^2 + V(x)
 
 \The potential V(x) is modeled as a Quartic Double-Well:
+
 V(x) = a(x^2 - b^2)^2Where:
+
 ​a: Barrier stiffness (derived from Slocombe et al. 2021).
+
 ​b: Half-distance of the hydrogen bond separation (\approx 0.35 Å).
 
 ​🚀 Installation & Usage
