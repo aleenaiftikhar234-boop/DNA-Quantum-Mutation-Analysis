@@ -1,70 +1,56 @@
 # 🧬 Q-Mutate: DNA Quantum Mutation Engine
-### *Investigating Proton Tunneling in G-C Base Pairs*
+### Investigating Proton Tunneling Dynamics in G-C Base Pairs Using Finite Difference TISE Solvers
 
-[![Field: Quantum Biology](https://img.shields.io/badge/Field-Quantum%20Biology-blueviolet)](https://en.wikipedia.org/wiki/Quantum_biology)
-[![Language: Python](https://img.shields.io/badge/Language-Python-blue)](https://www.python.org/downloads/)
-
----
-
-## 🌟 Overview
-**Q-Mutate** is a computational physics engine designed to simulate the quantum behavior of protons within the hydrogen bonds of DNA. This project explores the **Löwdin Hypothesis**, which suggests that protons can "tunnel" across energy barriers, leading to tautomeric shifts and spontaneous genetic mutations.
+**Author:** Aleena Baig  
+**Affiliation:** Mallinson Girls' School, Srinagar, Jammu & Kashmir, India  
+**Field:** Quantum Biology, Computational Physics  
+**Language:** Python (NumPy, SciPy, Matplotlib)
 
 ---
 
-## 🔬 Scientific Background
-In a classical model, a proton lacks the energy to "jump" the potential barrier between DNA bases. However, through **Quantum Tunneling**, there is a non-zero probability of the proton passing through the barrier.
+## 🔬 Overview
+**Q-Mutate** is a high-fidelity computational physics engine designed to simulate and analyze the quantum mechanical behavior of protons within the localized hydrogen bonds of DNA molecules. 
 
-### Key Features:
-* **Schrödinger Solver:** Solves the Time-Independent Schrödinger Equation (TISE) using the Finite Difference Method.
-* **Quartic Double-Well Potential:** Accurately models the $N-H...N$ bond geometry.
-* **Thermal Analysis:** Compares quantum tunneling rates against classical Boltzmann distributions at human body temperature (310K).
-* **Risk Scoring:** Categorizes mutation probability based on calculated tunneling frequencies.
+The project evaluates the **Löwdin Hypothesis**, which proposes that a proton sitting within a nucleotide base pair has a non-zero probability of tunneling across its classical potential barrier. If this translocation occurs immediately prior to or during the unwinding of the double helix for replication, the base pair undergoes a rare tautomeric shift (e.g., Guanine moving from its standard keto state to its rare enol form). This causes replication machinery to misread the template, driving spontaneous point mutations.
 
 ---
 
-## 🧮 Mathematical Model
-The engine utilizes a Hamiltonian matrix $\hat{H}$ defined as:
+## 🌌 Scientific Background
+In a purely classical model, a proton lacks the kinetic or thermal energy required to cross over the high electrostatic potential barrier separating the two nucleotide bases. However, by treating the proton as a quantum wavepacket, there is a non-zero transmission probability through the barrier.
 
-$$\hat{H} = -\frac{\hbar^2}{2m}\nabla^2 + V(x)$$
+### Key Engine Features:
+* **Schrödinger Grid Solver:** Solves the 1D Time-Independent Schrödinger Equation (TISE) using numerical matrix discretization.
+* **Quartic Double-Well Potential:** Models the precise structural configuration of the localized $N-H\cdots N$ hydrogen bond landscape.
+* **Automated Calibration Loop:** Automatically optimizes double-well constraints to systematically isolate a precise energy splitting window ($\Delta E \approx 0.004 \text{ eV}$).
+* **Frequency Analytics:** Converts spatial splitting margins into physical terahertz-scale tunneling rates to quantify background mutation mechanics.
 
-The potential $V(x)$ is modeled as a Quartic Double-Well:
+---
+
+## 🧮 Mathematical Architecture
+The system establishes a discrete Hamiltonian matrix operator ($\hat{H}$) expressed via:
+
+$$\hat{H} = -\frac{\hbar^2}{2m_p}\nabla^2 + V(x)$$
+
+The electrostatic interaction landscape is modeled as a symmetric/asymmetric Quartic Double-Well Potential Surface:
 
 $$V(x) = a(x^2 - b^2)^2$$
 
-**Parameters:**
-* **a**: Barrier stiffness (derived from Slocombe et al. 2021).
-* **b**: Half-distance of the hydrogen bond separation ($\approx 0.35$ Å).
+### Converged Structural Parameters:
+Following numerical calibration constraints targeting stable spatial intervals, the optimization loop settles on:
+* **$a$ (Barrier Stiffness Factor):** `2.887676` $\text{eV}/\text{Å}^4$
+* **$b$ (Half-Distance of Hydrogen Bond Separation):** `0.470955` $\text{Å}$
+* **$V_{\text{max}}$ (Calculated Central Barrier Height):** $\approx 0.142 \text{ eV}$
+
+The continuous second-order spatial derivative is mapped across $N = 1400$ discrete grid sections utilizing a second-order central finite difference framework:
+
+$$\frac{d^2\psi}{dx^2} \approx \frac{\psi(x + dx) - 2\psi(x) + \psi(x - dx)}{dx^2}$$
 
 ---
 
 ## 🚀 Installation & Usage
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/aleenaiftikhar234-boop/DNA-Quantum-Mutation-Analysis.git](https://github.com/aleenaiftikhar234-boop/DNA-Quantum-Mutation-Analysis.git)
-    ```
-2.  **Install dependencies:**
-    ```bash
-    pip install numpy scipy matplotlib
-    ```
-3.  **Run the analysis:**
-    ```bash
-    python dna_quantum_sim.py
-    ```
 
----
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/aleena-baig/q-mutate.git](https://github.com/aleena-baig/q-mutate.git)
+cd q-mutate
 
-## 📊 Results
-The simulation identifies the energy splitting ($\Delta E$) between the ground state ($\psi_0$) and the first excited state ($\psi_1$). This splitting is directly used to calculate the **Tunneling Frequency**, providing a quantitative measure of mutation risk.
-
----
-
-## 🎓 About the Author
-**Aleena Baig**
-* 📍 Srinagar, Jammu & Kashmir
-* 🔍 Research Interests: Quantum Biology, Computational Neuroscience, and Theoretical Physics.
-
----
-
-## 📜 References
-* Löwdin, P. O. (1963). "Proton Tunneling in DNA and its Biological Implications."
-* Slocombe, L., et al. (2021). "Quantum and classical effects in DNA point mutations." *Physical Chemistry Chemical Physics*.
