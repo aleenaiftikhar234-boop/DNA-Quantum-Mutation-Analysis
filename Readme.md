@@ -23,17 +23,17 @@ In a purely classical model, a proton lacks the kinetic or thermal energy requir
 
 ### Key Engine Features:
 * **Schrödinger Grid Solver:** Solves the 1D Time-Independent Schrödinger Equation (TISE) using numerical matrix discretization.
-* **Quartic Double-Well Potential:** Models the precise structural configuration of the localized $N-H\cdots N$ hydrogen bond landscape.
-* **Automated Calibration Loop:** Automatically optimizes double-well constraints to systematically isolate a precise energy splitting window ($\Delta E \approx 0.004$ eV).
+* **Quartic Double-Well Potential:** Models the precise structural configuration of the localized N-H...N hydrogen bond landscape.
+* **Automated Calibration Loop:** Automatically optimizes double-well constraints to systematically isolate a precise energy splitting window (ΔE ≈ 0.004 eV).
 * **Frequency Analytics:** Converts spatial splitting margins into physical terahertz-scale tunneling rates to quantify background mutation mechanics.
 
 ---
 
 ## 🧮 Mathematical Architecture
 
-The system establishes a discrete Hamiltonian matrix operator ($\hat{H}$) expressed via:
+The system establishes a discrete Hamiltonian matrix operator Ĥ expressed via:
 
-$$\hat{H} = -\frac{\hbar^2}{2m_p}\nabla^2 + V(x)$$
+$$H = -\frac{\hbar^2}{2m_p}\frac{d^2}{dx^2} + V(x)$$
 
 The electrostatic interaction landscape is modeled as a symmetric/asymmetric Quartic Double-Well Potential Surface:
 
@@ -43,11 +43,11 @@ $$V(x) = a(x^2 - b^2)^2$$
 
 Following numerical calibration constraints targeting stable spatial intervals, the optimization loop settles on:
 
-* **$a$ (Barrier Stiffness Factor):** `2.887676` eV/Å⁴
-* **$b$ (Half-Distance of Hydrogen Bond Separation):** `0.470955` Å
-* **$V_{\max}$ (Calculated Central Barrier Height):** $\approx 0.142$ eV
+* **a (Barrier Stiffness Factor):** `2.887676` eV/Å⁴
+* **b (Half-Distance of Hydrogen Bond Separation):** `0.470955` Å
+* **Vmax (Calculated Central Barrier Height):** ≈ 0.142 eV
 
-The continuous second-order spatial derivative is mapped across $N = 1400$ discrete grid sections utilizing a second-order central finite difference framework:
+The continuous second-order spatial derivative is mapped across N = 1400 discrete grid sections utilizing a second-order central finite difference framework:
 
 $$\frac{d^2\psi}{dx^2} \approx \frac{\psi(x + dx) - 2\psi(x) + \psi(x - dx)}{dx^2}$$
 
@@ -58,6 +58,7 @@ $$\frac{d^2\psi}{dx^2} \approx \frac{\psi(x + dx) - 2\psi(x) + \psi(x - dx)}{dx^
 ### 1. Clone the Repository
 ```bash
 git clone [https://github.com/aleenaiftikhar234-boop/q-mutate.git](https://github.com/aleenaiftikhar234-boop/q-mutate.git)
-cd Q-MUTATE
+cd q-mutate
+
 
 
