@@ -198,6 +198,7 @@ for test_N in grid_test_sizes:
 # Verify boundary leakage to address boundary constraint concerns
 boundary_amplitude_left = np.abs(wavefunctions[0, 0])
 boundary_amplitude_right = np.abs(wavefunctions[-1, 0])
+
 print("-"*75)
 print(f"Boundary Condition Check (Wavefunction Edge Leakage):")
 print(f"  Amplitude at x_min (-1.4 A): {boundary_amplitude_left:.2e}")
