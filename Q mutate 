@@ -55,11 +55,12 @@ def build_hamiltonian(a, b, c):
         offsets=[-1, 0, 1],
         format="csr"
     )
-    return H, V_ev
+    return H,V_ev
 
 def solve_system(H):
-    """Diagonalizes the Hamiltonian to extract the lowest two eigenstates."""
-    eigvals, eigvecs = spla.eigsh(H, k=2, which="SA")
+    """Diagonalizes the Hamiltonian to extract the lowest two eigenstates with high tolerance."""
+    eigvals, eigvecs = spla.eigsh(H, k=2, which="SA", tol=1e-10) # <-- Added tol=1e-10 here
+
     idx = np.argsort(eigvals)
     
     energies = eigvals[idx] / eV
