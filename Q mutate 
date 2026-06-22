@@ -132,6 +132,9 @@ def plot_results(V_ev, energies, wavefunctions):
 # =====================================
 # 4. Program Execution Framework
 # =====================================
+    # Render Visualizations
+    plot_results(V_ev, energies, wavefunctions)
+
 if __name__ == "__main__":
     # Execution sequence
     H, V_ev = build_hamiltonian(a_param, b_param, c_param)
